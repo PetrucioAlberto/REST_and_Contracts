@@ -1,0 +1,25 @@
+{
+  "name": "entrega_aula_24",
+  "version": "1.0.0",
+  "description": "Projeto de testes automatizados Cypress com relatório Allure",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rimraf allure-results allure-report",
+    "cy:run": "cypress run",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "test:report": "npm run pretest && npm run cy:run && npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.0",
+    "allure-commandline": "^2.30.0",
+    "axios": "^1.13.2",
+    "chai": "^6.2.0",
+    "cypress": "^15.6.0",
+    "joi": "^18.0.1",
+    "rimraf": "^6.1.0"
+  }
+}

@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+package-lock.json
+
+# Cypress relatórios e resultados
+cypress/reports/
+cypress/screenshots/
+cypress/videos/   
+cypress/downloads/
+cypress/.cache/
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Configurações locais (VS Code)
+.vscode/
