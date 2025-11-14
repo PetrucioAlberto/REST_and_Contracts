@@ -1,18 +1,20 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 
 module.exports = defineConfig({
-  reporter: "cypress-mochawesome-reporter",
-  reporterOptions: {
-    reportDir: "cypress/reports",
-    charts: true,
-    reportPageTitle: "Relatório de Testes - EBAC",
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    saveAllAttempts: false,
-  },
   e2e: {
+    supportFile: 'cypress/support/e2e.js',
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
-    },
-  },
+      // Inicializa o Allure
+      allureWriter(on, config);
+
+      // Garante que os testes gerem resultados
+      on('after:screenshot', (details) => {
+        return details; // necessário para que o plugin registre screenshots
+      });
+
+      return config;
+    }
+  }
 });
+
