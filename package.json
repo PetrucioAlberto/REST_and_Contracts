@@ -4,7 +4,7 @@
   "description": "Projeto de testes automatizados Cypress com relatório Allure",
   "main": "index.js",
   "scripts": {
-    "test:regressivo": "cypress run --headless --browser chrome",
+    "test:ci": "npm run pretest && cypress run --headless --browser chrome",
     "pretest": "rimraf allure-results allure-report",
     "cy:run": "cypress run",
     "allure:generate": "allure generate allure-results --clean",
