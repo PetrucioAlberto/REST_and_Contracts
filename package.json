@@ -2,7 +2,7 @@
   "name": "entrega_aula_24",
   "version": "1.0.0",
  "scripts": {
-  "test:report": "rimraf allure-results allure-report && cypress run --headless --browser chrome --env allure=true && allure generate allure-results --clean && allure open"
+  "test:report": "rimraf allure-results allure-report && cypress run --headless --browser chrome --env allure=true && allure generate allure-results --clean"
 },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.41.2",

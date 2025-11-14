@@ -26,10 +26,8 @@ pipeline {
     }
 
     post {
-        always {
-            echo 'Publicando Relatório Allure no Jenkins...'
-            // O plugin Allure Jenkins publica os arquivos da pasta 'allure-report'
-            allure report: 'allure-report', results: [[path: 'allure-results']] 
-        }
+    always {
+        allure report: 'allure-report', results: [[path: 'allure-results']] 
     }
+}
 }
